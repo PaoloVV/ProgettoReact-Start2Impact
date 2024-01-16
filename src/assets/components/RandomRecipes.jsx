@@ -34,7 +34,7 @@ function RandomRecipes(){
                 {!random.loading && random.error ? <div>Error: {random.error}</div> : null}
                 {!random.loading && random.randomRecipes ? <div className="grid grid-cols-1 md:max-xl:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:m-3 px-3 gap-10">
                     {random.randomRecipes.map(randomRec => (
-                        <Link to={`/details/${randomRec.id}`}>
+                        <Link to={`/advanced/${randomRec.id}`}>
                             <CardRecipe
                                 key={randomRec.id}
                                 title={randomRec.title}
