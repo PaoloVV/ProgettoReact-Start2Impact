@@ -13,7 +13,7 @@ import RecipeDetails from './assets/components/RecipeDetails.jsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path='/' element={<Home />}></ Route>
+      <Route path='/ProgettoReact-Start2Impact' element={<Home />}></ Route>
       <Route path='/random' element={<RandomRecipes />} />
       <Route path='/advanced' element={<AdvancedSearch />} />
       <Route path='/advanced/:id' element={<RecipeDetails />} />
