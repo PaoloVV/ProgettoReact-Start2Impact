@@ -66,7 +66,7 @@ function AdvancedSearch(){
 
                 </div>
 
-                <div className="sm:w-1/4 w-4/5 text-white flex flex-row sm:justify-evenly justify-between my-5">
+                <div className="lg:w-1/4 w-4/5 text-white flex flex-row lg:justify-evenly justify-between my-5">
                     {offset !== 0 ? <button className="border-2 uppercase bg-black p-3 rounded-xl" onClick={prevPage}>Prev Page</button> : null}
                     {(totalResults-offset) < 12 ? null :<button className="border-2 uppercase bg-black p-3 rounded-xl" onClick={nextPage}>Next Page</button>}
                 </div>
