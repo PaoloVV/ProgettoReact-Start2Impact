@@ -8,8 +8,8 @@ import Navbar from "./Navbar";
 
 function RecipeDetails(){
     const {id} = useParams()
-    // const myKey = import.meta.env.VITE_API_KEY
-    const myKey = import.meta.env.VITE_ALTERNATIVE_API_KEY
+    const myKey = import.meta.env.VITE_API_KEY
+    // const myKey = import.meta.env.VITE_ALTERNATIVE_API_KEY
 
     const [details, setDetails] = useState()
     const [error, setError] = useState(null)
