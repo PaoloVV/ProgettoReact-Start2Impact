@@ -27,7 +27,7 @@ useEffect(()=>{
 
           <div>
             <h1 className='md:text-6xl sm:text-5xl text-4xl font-bold text-white'>VegBook</h1>
-            <h3 className='md:text-3xl sm:text-xl text-lg font-bold text-white'>Your vegetarian cookbook</h3>
+            <h3 className='md:text-3xl sm:text-xl text-lg font-bold text-white'>Sviluppo</h3>
           </div>
           
           <div className='bg-white bg-opacity-60 border-2 rounded-xl self-center max-w-80 p-2'>
