@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 import './Home.css'
-import Navbar from './assets/components/Navbar'
+import Navbar from '../assets/components/navbar/Navbar'
 import { IoSearchSharp } from "react-icons/io5";
 import { FaRandom } from "react-icons/fa";
 import { BiFork } from "react-icons/bi";
 import { FaSpoon } from "react-icons/fa6";
 import { RiKnifeFill } from "react-icons/ri";
 import React, { useEffect } from 'react'
-import Footer from './assets/components/Footer';
+import Footer from '../assets/components/footer/Footer';
 
 
 function Home() {

@@ -1,11 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select"
-import { changeCalories } from "../../redux/maxCaloriesSlice";
-import { changeMaxTime } from "../../redux/timePreparationSlice";
-import { checkVegan, deCheckVegan } from "../../redux/veganSlice";
-import { changeQuery } from "../../redux/querySlice";
-import { resetOffset } from "../../redux/offsetSlice";
+import { changeCalories } from "../../../redux/maxCaloriesSlice";
+import { changeMaxTime } from "../../../redux/timePreparationSlice";
+import { checkVegan, deCheckVegan } from "../../../redux/veganSlice";
+import { changeQuery } from "../../../redux/querySlice";
+import { resetOffset } from "../../../redux/offsetSlice";
 
 function Searchbar({fetchRecipes}){
     const maxCalories = useSelector((state) => state.calories.maxCalories)

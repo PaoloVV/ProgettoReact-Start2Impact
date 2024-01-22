@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchRandom } from "../../redux/randomSlice";
-import CardRecipe from "./CardRecipe";
-import Navbar from "./Navbar";
-import Searchbar from "./SearchBar";
-import Footer from "./Footer";
+import { fetchRandom } from "../../../redux/randomSlice";
+import CardRecipe from "../../components/cardRecipe/CardRecipe";
+import Navbar from "../../components/navbar/Navbar";
+import Footer from "../../components/footer/Footer";
 
 function RandomRecipes(){
     const random = useSelector((state) => state.random)

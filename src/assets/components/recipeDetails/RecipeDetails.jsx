@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { FaCheck } from "react-icons/fa";
 import { RxLapTimer } from "react-icons/rx";
-import Navbar from "./Navbar";
+import Navbar from "../navbar/Navbar";
 
 
 function RecipeDetails(){
     const {id} = useParams()
-    const myKey = import.meta.env.VITE_API_KEY
-    // const myKey = import.meta.env.VITE_ALTERNATIVE_API_KEY
+    // const myKey = import.meta.env.VITE_API_KEY
+    const myKey = import.meta.env.VITE_ALTERNATIVE_API_KEY
 
     const [details, setDetails] = useState()
     const [error, setError] = useState(null)

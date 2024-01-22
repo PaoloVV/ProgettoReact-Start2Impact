@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { incrementOffset, decrementOffset } from "../../redux/offsetSlice"
-import Navbar from "../components/Navbar"
-import Searchbar from "../components/SearchBar"
-import CardRecipe from "../components/CardRecipe"
+import { incrementOffset, decrementOffset } from "../../../redux/offsetSlice"
+import Navbar from "../../components/navbar/Navbar"
+import Searchbar from "../../components/searchbar/Searchbar"
+import CardRecipe from "../../components/cardRecipe/CardRecipe"
 import axios from "axios"
-import Footer from "../components/Footer"
+import Footer from "../../components/footer/Footer"
 
 
 function AdvancedSearch(){
@@ -31,8 +31,8 @@ function AdvancedSearch(){
         dispatch(decrementOffset())
     }
 
-    const myKey = import.meta.env.VITE_API_KEY
-    // const myKey = import.meta.env.VITE_ALTERNATIVE_API_KEY
+    // const myKey = import.meta.env.VITE_API_KEY
+    const myKey = import.meta.env.VITE_ALTERNATIVE_API_KEY
 
     useEffect(() =>{
         fetchRecipes()

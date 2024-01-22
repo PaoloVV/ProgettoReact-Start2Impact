@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../images/forchetta-veg.jpg"
+import Logo from "../../images/forchetta-veg.jpg"
 import { FaGithubAlt } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { HiMiniCodeBracketSquare } from "react-icons/hi2";

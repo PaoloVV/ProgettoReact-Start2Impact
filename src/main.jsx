@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Home from './Home.jsx'
+import Home from './home/Home.jsx'
 import './index.css'
 import { Provider } from 'react-redux'
 import { store } from './redux/store.js'
 import { Route, RouterProvider, createRoutesFromElements, createHashRouter } from 'react-router-dom'
 import ErrorPage from './assets/pages/ErrorPage.jsx'
-import RandomRecipes from './assets/components/RandomRecipes.jsx'
-import AdvancedSearch from './assets/pages/AdvancedSearch.jsx'
-import RecipeDetails from './assets/components/RecipeDetails.jsx'
+import RandomRecipes from './assets/pages/randomRecipes/RandomRecipes.jsx'
+import AdvancedSearch from './assets/pages/advancedSearch/AdvancedSearch.jsx'
+import RecipeDetails from './assets/components/recipeDetails/RecipeDetails.jsx'
 
 const router = createHashRouter(
   createRoutesFromElements(
