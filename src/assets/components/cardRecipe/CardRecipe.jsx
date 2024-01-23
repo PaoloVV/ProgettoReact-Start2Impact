@@ -1,3 +1,4 @@
+import "./CardRecipe.css"
 
 function CardRecipe({ key, title, imgUrl }){
     return(

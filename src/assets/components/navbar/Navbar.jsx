@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../../images/forchetta-veg.jpg"
+import "./Navbar.css"
 import { FaGithubAlt } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { HiMiniCodeBracketSquare } from "react-icons/hi2";
@@ -9,8 +10,6 @@ function Navbar(){
     return (
         <>
             <div className="flex flex-row md:justify-between justify-start sm:items-center items-end">
-                {/* <div className="w-1/12">
-                </div> */}
                 <div className="sm:w-3/4 w-1/3  max-sm:px-2 flex flex-col md:flex-row md:justify-evenly justify-start md:items-center items-start">
                     <img src={Logo} alt="Logo App" className="img-logo lg:w-16 w-14 lg:h-16 h-14 m-4" />
                     <div className="sm:w-3/4 w-full bg-black h-10 rounded-xl text-white flex justify-evenly items-center">

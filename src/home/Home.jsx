@@ -11,9 +11,6 @@ import Footer from '../assets/components/footer/Footer';
 
 
 function Home() {
-useEffect(()=>{
-  console.log(import.meta.env.VITE_API_KEY)
-}, [])
 
   return (
     <>
@@ -27,7 +24,7 @@ useEffect(()=>{
 
           <div>
             <h1 className='md:text-6xl sm:text-5xl text-4xl font-bold text-white'>VegBook</h1>
-            <h3 className='md:text-3xl sm:text-xl text-lg font-bold text-white'>Sviluppo</h3>
+            <h3 className='md:text-3xl sm:text-xl text-lg font-bold text-white'>Your Vegetarian cookbook</h3>
           </div>
           
           <div className='bg-white bg-opacity-60 border-2 rounded-xl self-center max-w-80 p-2'>
@@ -45,7 +42,6 @@ useEffect(()=>{
             
           <div>
             <h3 className='sm:text-xl text-md  font-bold text-white flex flex-row justify-center'> -- Search <IoSearchSharp className='ml-3 self-center' /> -- </h3>
-            {/* <Searchbar /> */}
           </div>
 
           <div className='flex sm:flex-row flex-col items-center'>

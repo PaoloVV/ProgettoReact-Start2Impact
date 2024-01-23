@@ -1,0 +1,7 @@
+.img-logo{
+    border-radius: 50%;
+  }
+
+  .navbar-link:hover{
+    transform: scale(1.1);
+  }

@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { FaCheck } from "react-icons/fa";
 import { RxLapTimer } from "react-icons/rx";
+import "./RecipeDetails.css"
 import Navbar from "../navbar/Navbar";
+import { BounceLoader, PacmanLoader, PulseLoader } from "react-spinners";
 
 
 function RecipeDetails(){
@@ -16,26 +18,33 @@ function RecipeDetails(){
     const [isPending, setIsPending] = useState(true)
 
     useEffect(() => {
-        axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${myKey}`)
-        .then(res => {
-            console.log(res.data)
-            setDetails(res.data)
-            setIsPending(false)
-        })
-        .catch(err => {
-            console.log(err.message)
-            setError(err.message)
-            setIsPending(false)
-        })
+        setTimeout(() => {
+                axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${myKey}`)
+            .then(res => {
+                console.log(res.data)
+                setDetails(res.data)
+                setIsPending(false)
+            })
+            .catch(err => {
+                console.log(err.message)
+                setError(err.message)
+                setIsPending(false)
+            })
+        }, 2000);
+        
     }, [])
 
     return(
         <>
             <Navbar />
-            { isPending && <div>Loading...</div> }
+            { isPending && 
+                <div className="flex flex-col mt-20 justify-center items-center"><PulseLoader loading={isPending} color="white" size={25} /></div>
+            }
+
             { !isPending && error && <div>{error}</div> }
+
             { !isPending && !error && details &&
-                <>
+            <>
                 <div className="flex flex-col items-center mt-2">
                     <h2 className="sm:text-2xl text-xl uppercase font-bold text-white text-center">{details.title}</h2>
                     <div className="flex flex-col items-start mt-3 bg-white rounded-lg p-2 text-green-600">
@@ -73,7 +82,7 @@ function RecipeDetails(){
                         <button className="font-bold text-xl my-3 p-3 rounded-xl uppercase text-green-600 hover:text-white hover:bg-black bg-white">{details.sourceName}</button>
                     </a>
                 </div>
-                </>
+            </>
             }
         </>
     )

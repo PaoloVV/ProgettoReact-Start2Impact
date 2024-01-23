@@ -7,6 +7,7 @@ import Searchbar from "../../components/searchbar/Searchbar"
 import CardRecipe from "../../components/cardRecipe/CardRecipe"
 import axios from "axios"
 import Footer from "../../components/footer/Footer"
+import { BounceLoader, PulseLoader } from "react-spinners"
 
 
 function AdvancedSearch(){
@@ -36,17 +37,19 @@ function AdvancedSearch(){
 
     useEffect(() =>{
         fetchRecipes()
-        // dispatch(fetchRecipes())
     }, [offset])
 
     const fetchRecipes = () =>{
+        setRecipes([])
         setIsPending(true);
         axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${myKey}&query=${query}&maxReadyTime=${maxTime}&maxCalories=${maxCal}&vegan=${vegan}&number=${12}&offset=${offset}`)
         .then(res =>{
             console.log(res.data)
-            setRecipes(res.data.results)
-            setTotalResults(res.data.totalResults)
-            setIsPending(false)
+            setTimeout(() =>{
+                setRecipes(res.data.results)
+                setTotalResults(res.data.totalResults)
+                setIsPending(false)
+            }, 2000)
         })
         .catch(err =>{
             console.log(err.message)
@@ -72,8 +75,12 @@ function AdvancedSearch(){
                 </div>
 
                 <div>
-                    {isPending && <div className="text-white font-bold text-center mt-3">Loading...</div>}
+                    {isPending && 
+                        <div className="flex flex-row justify-center items-center"><PulseLoader loading={isPending} color="white" size={25} /></div>
+                    }
+
                     {error ? <div>Error: {error.message}</div> : null}
+
                     {!error && recipes && 
                     <>
                         <p className="text-white text-bold text-center">I've found: {totalResults} results!</p>
@@ -99,10 +106,6 @@ function AdvancedSearch(){
                 <Footer></Footer>
 
             </div>
-            
-        
-
-
         </>
     )
 }

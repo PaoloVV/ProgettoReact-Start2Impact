@@ -5,7 +5,7 @@ import axios from "axios";
 const myKey = import.meta.env.VITE_ALTERNATIVE_API_KEY
 
 const initialState = {
-    loading: false,
+    loading: true,
     randomRecipes: [],
     error: ""
 }
@@ -13,12 +13,19 @@ const initialState = {
 export const fetchRandom = createAsyncThunk("random/fetchRandom", async () => {
     const response = await axios.get(`https://api.spoonacular.com/recipes/random?apiKey=${myKey}&number=6&tags=vegetarian`)
     console.log(response.data.recipes)
-    return response.data.recipes
+        return response.data.recipes
 })
+
+
 
 export const randomSlice = createSlice({
     name: "random",
     initialState,
+    reducers: {
+        impostaLoading: (state) =>{
+            state.loading = true
+        }
+    },
     extraReducers: (builder) => {
         builder.addCase(fetchRandom.pending, (state) => {
             state.loading = true
@@ -36,4 +43,5 @@ export const randomSlice = createSlice({
 
 })
 
+export const {impostaLoading} = randomSlice.actions
 export const randomReducer = randomSlice.reducer
