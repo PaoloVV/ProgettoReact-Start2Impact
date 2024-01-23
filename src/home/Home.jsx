@@ -1,19 +1,16 @@
 import { Link } from 'react-router-dom'
 import './Home.css'
-import Navbar from './assets/components/Navbar'
+import Navbar from '../assets/components/navbar/Navbar'
 import { IoSearchSharp } from "react-icons/io5";
 import { FaRandom } from "react-icons/fa";
 import { BiFork } from "react-icons/bi";
 import { FaSpoon } from "react-icons/fa6";
 import { RiKnifeFill } from "react-icons/ri";
 import React, { useEffect } from 'react'
-import Footer from './assets/components/Footer';
+import Footer from '../assets/components/footer/Footer';
 
 
 function Home() {
-useEffect(()=>{
-  console.log(import.meta.env.VITE_API_KEY)
-}, [])
 
   return (
     <>
@@ -27,7 +24,7 @@ useEffect(()=>{
 
           <div>
             <h1 className='md:text-6xl sm:text-5xl text-4xl font-bold text-white'>VegBook</h1>
-            <h3 className='md:text-3xl sm:text-xl text-lg font-bold text-white'>Your vegetarian cookbook</h3>
+            <h3 className='md:text-3xl sm:text-xl text-lg font-bold text-white'>Your Vegetarian cookbook</h3>
           </div>
           
           <div className='bg-white bg-opacity-60 border-2 rounded-xl self-center max-w-80 p-2'>
@@ -45,7 +42,6 @@ useEffect(()=>{
             
           <div>
             <h3 className='sm:text-xl text-md  font-bold text-white flex flex-row justify-center'> -- Search <IoSearchSharp className='ml-3 self-center' /> -- </h3>
-            {/* <Searchbar /> */}
           </div>
 
           <div className='flex sm:flex-row flex-col items-center'>
